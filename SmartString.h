@@ -4,7 +4,7 @@ private:
   int m_length;
   char* m_text;
 
-  // ========== Internal methods.
+  // ========== Helpers.
   // Calculates length of text.
   int calculate_text_length(const char*);
   // Copies one char array to another.
@@ -13,9 +13,9 @@ private:
 public:
   // ========== -ctors.
   SmartString();
-  ~SmartString();
   SmartString(const SmartString&);
   SmartString(const char*);
+  ~SmartString();
 
   // ========== Concatenation.
   void join(const SmartString&);
@@ -23,13 +23,13 @@ public:
   SmartString operator+(const SmartString&);
   SmartString operator+(const char*);
 
-  // ========== Assigement.
+  // ========== Assignment.
   SmartString& operator=(const SmartString&);
   SmartString& operator=(const char*);
 
-  // ========== Concatenation and Assigement.
-  SmartString& operator += (const SmartString&);
-  SmartString& operator += (const char*);
+  // ========== Concatenation and Assignment.
+  SmartString& operator +=(const SmartString&);
+  SmartString& operator +=(const char*);
 
   // ========== Comparison.
   bool operator==(const SmartString&);
